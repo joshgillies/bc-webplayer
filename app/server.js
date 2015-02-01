@@ -1,10 +1,12 @@
 var jadeStream = require('jade-stream')
+var config = require('rc')('bc-webplayer');
 var http = require('http')
 var st = require('st')
 
 var mount = st({
   path: 'app/assets',
-  index: 'index.jade'
+  index: 'index.jade',
+  cache: config.cache
 })
 
 var app = http.createServer(function server(req, res) {
