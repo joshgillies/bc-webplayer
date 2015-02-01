@@ -4,9 +4,13 @@
   "description": "An experiment",
   "main": "index.js",
   "scripts": {
-    "start": "npm run server",
+    "start": "npm run build & npm run server",
     "server": "node app/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npm run watch-css & npm run server",
+    "watch-css": "cssnext --watch app/styles/app.css app/assets/app.css",
+    "build": "npm run build-css",
+    "build-css": "cssnext --compress app/styles/app.css app/assets/app.css"
   },
   "repository": {
     "type": "git",
@@ -26,7 +30,15 @@
   },
   "homepage": "https://github.com/joshgillies/bc-webplayer",
   "dependencies": {
+    "cssnext": "^0.6.6",
     "jade-stream": "^0.1.2",
-    "st": "^0.5.2"
+    "normalize.css": "^3.0.2",
+    "rc": "^0.5.5",
+    "st": "^0.5.2",
+    "tachyons-background-size": "^1.0.0",
+    "tachyons-base": "^1.0.0",
+    "tachyons-clears": "^1.0.0",
+    "tachyons-floats": "^0.3.0",
+    "watchify": "^2.3.0"
   }
 }
