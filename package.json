@@ -7,10 +7,12 @@
     "start": "npm run build & npm run server",
     "server": "node app/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "npm run watch-css & npm run server",
-    "watch-css": "cssnext --watch app/styles/app.css app/assets/app.css",
-    "build": "npm run build-css",
-    "build-css": "cssnext --compress app/styles/app.css app/assets/app.css"
+    "watch": "npm run watch-jade & npm run watch-css & npm run server",
+    "watch-css": "cssnext --watch app/styles/app.css app/static/app.css",
+    "watch-jade": "jade --watch --pretty app/templates/index.jade --out app/static",
+    "build": "npm run build-jade & npm run build-css",
+    "build-css": "cssnext --compress app/styles/app.css app/static/app.css",
+    "build-jade": "jade app/tempaltes/index.css --out app/static"
   },
   "repository": {
     "type": "git",
@@ -31,7 +33,7 @@
   "homepage": "https://github.com/joshgillies/bc-webplayer",
   "dependencies": {
     "cssnext": "^0.6.6",
-    "jade-stream": "^0.1.2",
+    "jade": "^1.9.1",
     "normalize.css": "^3.0.2",
     "rc": "^0.5.5",
     "st": "^0.5.2",
