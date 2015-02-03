@@ -4,10 +4,10 @@
   "description": "An experiment",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build & npm run server",
-    "server": "node app/server.js",
+    "prestart": "npm run build",
+    "start": "node app/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "npm run watch-jade & npm run watch-css & npm run server",
+    "watch": "npm run watch-jade & npm run watch-css & node app/server.js",
     "watch-css": "cssnext --watch app/styles/app.css app/static/app.css",
     "watch-jade": "jade --watch --pretty app/templates/index.jade --out app/static",
     "build": "npm run build-jade & npm run build-css",
