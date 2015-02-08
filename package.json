@@ -34,6 +34,7 @@
   "homepage": "https://github.com/joshgillies/bc-webplayer",
   "dependencies": {
     "cssnext": "^0.6.6",
+    "cuid": "^1.2.4",
     "global": "^4.3.0",
     "jade": "^1.9.1",
     "mercury": "^14.0.0",
